@@ -93,6 +93,8 @@ public class CommandLineMain {
 					System.err.println("Passwords do not match; aborting.");
 				}
 				
+				password = npassword;
+				
 				break;
 			case "exit":
 				return;
