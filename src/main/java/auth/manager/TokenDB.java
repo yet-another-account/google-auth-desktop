@@ -6,6 +6,8 @@ public class TokenDB {
 	TokenDB() {}
 	
 	boolean isEncrypted;
+	String initvector;
+	String passwordhash;
 	LinkedList<TokenEntry> tokens;
 	
 	
