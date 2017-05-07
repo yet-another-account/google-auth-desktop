@@ -69,7 +69,7 @@ public class CommandLineMain {
 					index = Integer.parseInt(lineargs[1]) - 1;
 				} catch (NumberFormatException e) {
 					System.err.println("Expected a number for index! ");
-					return;
+					break;
 				}
 				GoogleAuth ga = new GoogleAuth(am.getToken(index, password));
 				String pin = ga.computePin();
@@ -100,6 +100,8 @@ public class CommandLineMain {
 				return;
 			case "help":
 				System.out.println("list\t\tadd\t\tremove\t\tgetpin\t\tsetpw\t\texit\t\thelp");
+			default:
+				System.err.println("Unrecognised command");
 			}
 		}
 	}
