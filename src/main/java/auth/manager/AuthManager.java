@@ -21,10 +21,10 @@ public class AuthManager {
 	File authfile;
 	
 	public AuthManager(File authfile) throws IOException {
+		this.authfile = authfile;
 		if(!authfile.exists())
 			createNew(authfile);
 		
-		this.authfile = authfile;
 		
 		read();
 	}
@@ -66,7 +66,7 @@ public class AuthManager {
 		tokens.isEncrypted = false;
 		tokens.tokens = new LinkedList<TokenEntry>();
 		
-		
+		save();
 	}
 	
 	public String getToken(int index, String password) {
